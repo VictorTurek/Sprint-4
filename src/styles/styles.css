@@ -1,0 +1,15 @@
+#jokesContainer{
+   margin-top: 60px;
+}
+
+
+#jokesTime{
+        text-align: center;
+        padding: 20px;
+        border: 2px solid #000;
+        border-radius: 10px;
+}
+
+#dadJokesHere{
+    margin: 30px;
+}
