@@ -10,6 +10,35 @@
         border-radius: 10px;
 }
 
-#dadJokesHere{
+#dadJokesHere {
     margin: 30px;
+}
+
+#reviews {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.buttonReviewContainer {
+    margin: 20px;
+}
+
+.buttonReview {
+    margin: 15px;
+    border: none;
+    background: none;
+    width: 60px;
+    height: 50px;
+}
+
+.reviewPicture {
+    width: 50px;
+    height: 50px;
+}
+.reviewPicture:hover {
+    width: 55px;
+    height: 55px;
 }
