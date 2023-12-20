@@ -1,13 +1,13 @@
-#jokesContainer{
-   margin-top: 60px;
+#jokesContainer {
+    margin-top: 60px;
 }
 
 
-#jokesTime{
-        text-align: center;
-        padding: 20px;
-        border: 2px solid #000;
-        border-radius: 10px;
+#jokesTime {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
 }
 
 #dadJokesHere {
@@ -19,26 +19,35 @@
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
-}
+    }
 
-.buttonReviewContainer {
+.buttonReviewCoontainer {
     margin: 20px;
+    width: 60px;
+    height: 60px;
 }
 
 .buttonReview {
     margin: 15px;
     border: none;
     background: none;
-    width: 60px;
-    height: 50px;
+
 }
 
 .reviewPicture {
     width: 50px;
     height: 50px;
 }
+
 .reviewPicture:hover {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
 }
+
+.checkReview{
+    display: none; 
+}
+.checkReview:checked + .reviewPicture {
+    width: 60px;
+    height: 60px;
+  }

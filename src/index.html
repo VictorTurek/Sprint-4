@@ -31,32 +31,37 @@
                             <div id="randomJokes">
                                 <!-- Jokes here -->
                             </div>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div id="reviews">
-                                        <div class="buttonReviewCoontainer">
-                                            <button class="buttonReview" id="badReview">
-                                                <img src="./img/sad-face.svg" alt="Sad face" class="reviewPicture">
-                                            </button>
-                                        </div>
-                                        <div class="buttonReviewCoontainer">
-                                            <button class="buttonReview" id="neutralReview">
-                                                <img src="./img/poker-face.svg" alt="Poker face" class="reviewPicture">
-
-                                            </button>
-                                        </div>
-                                        <div class="buttonReviewCoontainer">
-                                            <button class="buttonReview" id="goodReview">
-                                                <img src="./img/happy-face.svg" alt="Happy face" class="reviewPicture">
-                                            </button>
-                                        </div>
-
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div id="reviews">
+                                    <div class="buttonReviewCoontainer">
+                                        <label>
+                                            <input type="radio" name="option" value="option1" class="checkReview">
+                                            <img src="./img/sad-face.svg" alt="Sad face" class="reviewPicture">
+                                        </label>
                                     </div>
+
+                                    <div class="buttonReviewCoontainer">
+                                        <label>
+                                            <input type="radio" name="option" value="option2" class="checkReview">
+                                            <img src="./img/poker-face.svg" alt="poker face" class="reviewPicture">
+                                        </label>
+                                    </div>
+
+                                    <div class="buttonReviewCoontainer">
+                                        <label>
+                                            <input type="radio" name="option" value="option3" class="checkReview">
+                                            <img src="./img/happy-face.svg" alt="happy face" class="reviewPicture">
+                                        </label>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
+
                         <div id="nextJokeButton">
-                            <button class="btn btn-primary" id="jokeButton" onclick="randomJoke()">Next Joke!</button>
+                            <button class="btn btn-primary" id="jokeButton" onclick="nextJoke()">Next Joke!</button>
                         </div>
                     </div>
                 </div>
