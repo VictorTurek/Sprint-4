@@ -1,6 +1,12 @@
-//import { JOKE } from './types';
+type JOKE = {
+    joke: string;
+    score: number;
+    date: string; // Canvia a string per emmagatzemar la data en format ISO
+};
+const reportAcudits: JOKE[] = [];
 
-const apiUrl: string = "https://icanhazdadjoke.com/";
+
+const apiUrl: string = "https://icanhazdadjoke.com/"; //Llamamos a la Api en esta URL.
 
 const requestOptions = {
     method: "GET",
@@ -33,6 +39,7 @@ function randomJoke() {
             randomJokes.innerText = `Error al cargar el chiste. Detalles: ${error.message}`;
             throw error;
         });
+        
 }
 
 

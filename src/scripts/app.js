@@ -1,6 +1,6 @@
 "use strict";
-//import { JOKE } from './types';
-const apiUrl = "https://icanhazdadjoke.com/";
+const reportAcudits = [];
+const apiUrl = "https://icanhazdadjoke.com/"; //Llamamos a la Api en esta URL.
 const requestOptions = {
     method: "GET",
     headers: {
