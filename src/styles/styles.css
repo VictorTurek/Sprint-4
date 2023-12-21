@@ -1,25 +1,84 @@
-#jokesContainer {
-    margin-top: 60px;
+#weather-container {
+    margin-top: 10px;
+    margin-left: 20px;
+    color: gray;
+    font-size: large;
+    font-weight: bold;
 }
 
+#weather-icon {
+    height: 80px;
+}
+
+#jokesContainer {
+    margin-top: 20px;
+}
+
+.small-blob {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-image: url('../img/blob/5.svg');
+    background-size: cover;
+    background-position: center center;
+}
+
+#right-column {
+    margin-top: auto;
+    padding-left: 0px;
+}
+
+#left-column {
+
+    padding-right: 0px;
+}
+
+#central-column {
+    padding-left: 0px;
+    padding-right: 0px;
+
+}
+
+#blob {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 750px;
+    background-image: url('../img/blob/1.svg');
+    background-size: cover;
+    background-position: center center;
+}
 
 #jokesTime {
+    width: 70%;
     text-align: center;
-    padding: 20px;
-    border: 2px solid #000;
-    border-radius: 10px;
+    color: white;
+    font-weight: bold;
 }
 
 #dadJokesHere {
     margin: 30px;
 }
 
+#randomJokes {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#reviews-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #reviews {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    }
+}
 
 .buttonReviewCoontainer {
     margin: 20px;
@@ -44,10 +103,51 @@
     height: 60px;
 }
 
-.checkReview{
-    display: none; 
+.checkReview {
+    display: none;
 }
-.checkReview:checked + .reviewPicture {
+
+.checkReview:checked+.reviewPicture {
     width: 60px;
     height: 60px;
-  }
+}
+
+
+
+/* CSS */
+.button-87 {
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-87:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.button-87:active {
+  transform: scale(0.95);
+}
+
+#nextJokeButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

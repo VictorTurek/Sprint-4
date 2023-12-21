@@ -14,61 +14,75 @@
 </head>
 
 <body>
+    <div>
+        <div id="weather-container">
+            <!-- Les dades meteorològiques es mostraran aquí -->
+        </div>
+    </div>
+
+
     <div id="jokesContainer">
         <div class="container-fluid">
             <div class="row">
                 <!-- Columna lateral izquierda -->
-                <div class="col-md-2">
-                    <!-- Contenido de la columna izquierda -->
-                </div>
-
-                <!-- Columna central -->
-                <div class="col-md-8">
-                    <!-- Contenido de la columna central -->
-                    <div id="jokesTime">
-                        <h1>Fun Time!</h1>
-                        <div id="dadJokesHere">
-                            <div id="randomJokes">
-                                <!-- Jokes here -->
-                            </div>
-                        </div>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div id="reviews">
-                                    <div class="buttonReviewCoontainer">
-                                        <label>
-                                            <input type="radio" name="option" value="option1" class="checkReview">
-                                            <img src="./img/sad-face.svg" alt="Sad face" class="reviewPicture">
-                                        </label>
-                                    </div>
-
-                                    <div class="buttonReviewCoontainer">
-                                        <label>
-                                            <input type="radio" name="option" value="option2" class="checkReview">
-                                            <img src="./img/poker-face.svg" alt="poker face" class="reviewPicture">
-                                        </label>
-                                    </div>
-
-                                    <div class="buttonReviewCoontainer">
-                                        <label>
-                                            <input type="radio" name="option" value="option3" class="checkReview">
-                                            <img src="./img/happy-face.svg" alt="happy face" class="reviewPicture">
-                                        </label>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="nextJokeButton">
-                            <button class="btn btn-primary" id="jokeButton" onclick="nextJoke()">Next Joke!</button>
-                        </div>
+                <div class="col-md-2" id="left-column">
+                    <div class="small-blob" id="small-blob-left">
+                        
                     </div>
                 </div>
 
+                <!-- Columna central -->
+                <div class="col-md-8" id="central-column">
+
+                    <!-- Contenido de la columna central -->
+                    <div id="blob">
+                        <div id="jokesTime">
+                            <h1>Fun Time!</h1>
+                            <div id="dadJokesHere">
+                                <div id="randomJokes">
+                                    <!-- Jokes here -->
+                                </div>
+                            </div>
+                            
+                                <div class="row" id="reviews-container">
+                                    <div id="reviews">
+                                        <div class="buttonReviewCoontainer">
+                                            <label>
+                                                <input type="radio" name="option" value="option1" class="checkReview">
+                                                <img src="./img/sad-face.svg" alt="Sad face" class="reviewPicture">
+                                            </label>
+                                        </div>
+
+                                        <div class="buttonReviewCoontainer">
+                                            <label>
+                                                <input type="radio" name="option" value="option2" class="checkReview">
+                                                <img src="./img/poker-face.svg" alt="poker face" class="reviewPicture">
+                                            </label>
+                                        </div>
+
+                                        <div class="buttonReviewCoontainer">
+                                            <label>
+                                                <input type="radio" name="option" value="option3" class="checkReview">
+                                                <img src="./img/happy-face.svg" alt="happy face" class="reviewPicture">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+
+                            <div id="nextJokeButton">
+                                <button class="button-87" id="jokeButton" onclick="nextJoke()">Next
+                                    Joke!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- Columna lateral derecha -->
-                <div class="col-md-2">
-                    <!-- Contenido de la columna derecha -->
+                <div class="col-md-2" id="right-column">
+                    <div >
+                        <div class="small-blob" id="small-blob-right">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
