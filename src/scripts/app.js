@@ -15,7 +15,7 @@ function getWeatherData(city) {
         try {
             const response = yield fetch(apiUrl);
             const data = yield response.json();
-            console.log("Dades meteorològiques:", data);
+            //console.log("Dades meteorològiques:", data);
             return data;
         }
         catch (error) {
@@ -69,7 +69,6 @@ function showWeatherData() {
 }
 // Executa la funció de les dades meteorològiques al carregar la pàgina
 document.addEventListener("DOMContentLoaded", showWeatherData);
-const reportAcudits = [];
 //Llamamos a la Api de Dad Jokes en esta URL.
 const apiUrl = "https://icanhazdadjoke.com/";
 //Llamamos a la Api de Chuck Norris Jokes en esta URL.
@@ -92,6 +91,7 @@ function getChuckNorrisJoke() {
         .then(response => response.json())
         .then(data => data.value);
 }
+const reportAcudits = [];
 // Función para obtener alternativamente Dad Jokes y Chuck Norris Jokes
 function getRandomJoke() {
     const randomIndex = Math.random();
@@ -99,8 +99,9 @@ function getRandomJoke() {
     return jokePromise.then(joke => {
         let randomJokes = document.getElementById("randomJokes");
         randomJokes.innerText = joke;
-        console.log(joke);
+        //console.log(joke);
         return joke;
+        // aqui generar el array.
     }).catch(error => {
         console.error("Error al obtener la broma:", error);
         let randomJokes = document.getElementById("randomJokes");
@@ -120,7 +121,7 @@ function nextJoke() {
 function getData() {
     const options = document.getElementsByName("option");
     let choosenOption = null;
-    let score;
+    let score = 0; // Inicializar score fuera del bloque if
     options.forEach(option => {
         if (option.checked) {
             choosenOption = option.value;
@@ -130,17 +131,27 @@ function getData() {
         //console.log(choosenOption);
         if (choosenOption === "option1") {
             score = 1;
-            console.log("El chiste es de mal gusto");
+            //console.log("El chiste es de mal gusto");
         }
         else if (choosenOption === "option2") {
             score = 2;
-            console.log("El chiste no me ha hecho reir");
+            //console.log("El chiste no me ha hecho reir");
         }
         else if (choosenOption === "option3") {
             score = 3;
-            console.log("Me tronchooooo!");
+            //console.log("Me tronchooooo!");
         }
-        generarFechaISO();
+        const fechaISO = generarFechaISO();
+        const randomJoke = document.getElementById("randomJokes");
+        const jokeText = randomJoke.innerText;
+        const jokeObject = {
+            joke: jokeText,
+            score: score,
+            date: fechaISO,
+        };
+        reportAcudits.push(jokeObject);
+        //console.log("Objeto de chiste reportado:", jokeObject);
+        console.log(reportAcudits);
     }
     else {
         console.log("Ninguna opción seleccionada.");
@@ -156,8 +167,7 @@ function uncheck() {
 function generarFechaISO() {
     const fechaActual = new Date();
     const fechaISO = fechaActual.toISOString();
-    console.log("Fecha en formato ISO:", fechaISO);
-    //alert("Fecha en formato ISO: " + fechaISO);
+    //console.log("Fecha en formato ISO:", fechaISO);
     return fechaISO;
 }
 function changeBlobs() {

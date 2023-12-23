@@ -18,7 +18,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    aspect-ratio: 1 / 1;
+    /* Proporción cuadrada, ajusta según sea necesario */
     background-image: url('../img/blob/5.svg');
     background-size: cover;
     background-position: center center;
@@ -44,7 +45,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 750px;
+    aspect-ratio: 1 / 1;
     background-image: url('../img/blob/1.svg');
     background-size: cover;
     background-position: center center;
@@ -55,6 +56,7 @@
     text-align: center;
     color: white;
     font-weight: bold;
+    margin-top: 30px;
 }
 
 #dadJokesHere {
@@ -116,38 +118,100 @@
 
 /* CSS */
 .button-87 {
-  margin: 10px;
-  padding: 15px 30px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  border-radius: 10px;
-  display: block;
-  border: 0px;
-  font-weight: 700;
-  box-shadow: 0px 0px 14px -7px #f09819;
-  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+    margin: 10px;
+    padding: 15px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    border: 0px;
+    font-weight: 700;
+    box-shadow: 0px 0px 14px -7px #f09819;
+    background-image: linear-gradient(45deg, #FF512F 0%, #F09819 51%, #FF512F 100%);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
 .button-87:hover {
-  background-position: right center;
-  /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
 }
 
 .button-87:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
 
-#nextJokeButton{
+#nextJokeButton {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 767px) {
+    #central-column {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #blob {
+        height: 500px;
+    }
+
+    #jokesTime {
+        width: 100%;
+    }
+}
+
+#central-column {
+    position: relative;
+    z-index: 2;
+}
+
+#left-column,
+#right-column {
+    position: relative;
+    z-index: 1;
+}
+
+#rowWrap {
+    flex-wrap: nowrap;
+}
+
+/* Estilos para pantallas más pequeñas (menos de 700px) */
+@media (max-width: 600px) {
+    #central-column {
+        width: 100%;
+        padding-left: 10px;
+        /* Ajusta según sea necesario */
+        padding-right: 10px;
+        /* Ajusta según sea necesario */
+    }
+
+    #left-column,
+    #right-column {
+        display: none;
+        /* O puedes ocultar completamente las columnas laterales si lo prefieres */
+    }
+
+    #blob {
+        width: 100%;
+    }
+
+    #randomJokes {
+        font-size: smaller;
+        /* O ajusta según sea necesario para reducir el tamaño de fuente */
+    }
+
+    #funTime {
+        font-size: x-large;
+    }
+
+
 }

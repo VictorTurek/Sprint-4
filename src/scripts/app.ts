@@ -5,7 +5,7 @@ async function getWeatherData(city: string): Promise<any> {
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
-        console.log("Dades meteorològiques:", data);
+        //console.log("Dades meteorològiques:", data);
         return data;
     } catch (error) {
         console.error("Error al obtenir dades meteorològiques:", error);
@@ -61,14 +61,6 @@ async function showWeatherData() {
 document.addEventListener("DOMContentLoaded", showWeatherData);
 
 
-type JOKE = {
-    joke: string;
-    score: number;
-    date: string; // Canvia a string per emmagatzemar la data en format ISO
-};
-const reportAcudits: JOKE[] = [];
-
-
 //Llamamos a la Api de Dad Jokes en esta URL.
 const apiUrl: string = "https://icanhazdadjoke.com/";
 //Llamamos a la Api de Chuck Norris Jokes en esta URL.
@@ -95,6 +87,16 @@ function getChuckNorrisJoke(): Promise<string> {
         .then(data => data.value);
 }
 
+//definimos el formato del array que queremos generar.
+type JOKE = {
+    joke: string;
+    score: number;
+    date: string; // Canvia a string per emmagatzemar la data en format ISO
+};
+
+const reportAcudits: JOKE[] = [];
+
+
 // Función para obtener alternativamente Dad Jokes y Chuck Norris Jokes
 function getRandomJoke(): Promise<string> {
     const randomIndex = Math.random();
@@ -102,13 +104,15 @@ function getRandomJoke(): Promise<string> {
     return jokePromise.then(joke => {
         let randomJokes: HTMLElement | null = document.getElementById("randomJokes")!;
         randomJokes.innerText = joke;
-        console.log(joke);
+        //console.log(joke);
         return joke;
+        // aqui generar el array.
+
     }).catch(error => {
         console.error("Error al obtener la broma:", error);
         let randomJokes: HTMLElement | null = document.getElementById("randomJokes")!;
         randomJokes.innerText = `Error al cargar la broma. Detalles: ${error.message}`;
-        throw error;
+        throw error;        
     });
 }
 
@@ -126,7 +130,7 @@ function nextJoke() {
 function getData() {
     const options = document.getElementsByName("option") as NodeListOf<HTMLInputElement>;
     let choosenOption: string | null = null;
-    let score: number;
+    let score: number = 0; // Inicializar score fuera del bloque if
 
     options.forEach(option => {
         if (option.checked) {
@@ -138,15 +142,30 @@ function getData() {
         //console.log(choosenOption);
         if (choosenOption === "option1") {
             score = 1;
-            console.log("El chiste es de mal gusto");
+            //console.log("El chiste es de mal gusto");
         } else if (choosenOption === "option2") {
             score = 2
-            console.log("El chiste no me ha hecho reir");
+            //console.log("El chiste no me ha hecho reir");
         } else if (choosenOption === "option3") {
             score = 3
-            console.log("Me tronchooooo!");
+           //console.log("Me tronchooooo!");
         }
-        generarFechaISO()
+        
+        const fechaISO = generarFechaISO();
+        const randomJoke: HTMLElement | null = document.getElementById("randomJokes")!;
+        const jokeText = randomJoke.innerText;
+
+        const jokeObject: JOKE = {
+            joke: jokeText,
+            score: score,
+            date: fechaISO,
+        };
+
+        reportAcudits.push(jokeObject);
+        //console.log("Objeto de chiste reportado:", jokeObject);
+        console.log(reportAcudits);
+
+
 
     } else {
         console.log("Ninguna opción seleccionada.");
@@ -166,8 +185,7 @@ function generarFechaISO() {
     const fechaActual = new Date();
     const fechaISO = fechaActual.toISOString();
 
-    console.log("Fecha en formato ISO:", fechaISO);
-    //alert("Fecha en formato ISO: " + fechaISO);
+    //console.log("Fecha en formato ISO:", fechaISO);
     return fechaISO;
 }
 
